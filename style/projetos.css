@@ -1,0 +1,437 @@
+/* =========================================
+   Variáveis Globais
+========================================= */
+:root {
+    --primary-color: #2C3E50;       /* Cor principal usada no header e rodapé */
+    --secondary-color: #3498DB;     /* Cor de destaque */
+    --text-primary: #2C3E50;        /* Cor principal para textos */
+    --text-secondary: #6C757D;      /* Cor secundária para subtítulos/legendas */
+    --background-light: #F8FAFC;    /* Cor de fundo clara */
+    --white: #FFFFFF;
+    --border-radius: 8px;           /* Borda arredondada para botões e cards */
+    --transition-speed: 0.3s;       /* Velocidade de transição em hovers */
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  /* =========================================
+     Reset e Estilos Base
+  ========================================= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* =========================================
+     Header (cabeçalho fixo)
+  ========================================= */
+  .main-header {
+    background: var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    gap: 1rem;
+  }
+  
+  .logo-img {
+    width: 50px;
+    height: auto;
+  }
+  
+  .logo h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  /* Menu de navegação */
+  .main-nav {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-link {
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: background var(--transition-speed);
+  }
+  
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-link.active {
+    background: var(--secondary-color);
+  }
+  
+  /* =========================================
+     Hero Section
+  ========================================= */
+  .hero {
+    background-color: var(--white);
+    padding: 4rem 0;
+    margin-top: 6rem; /* compensa o header fixo */
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .hero-text {
+    flex: 1 1 400px;
+  }
+  
+  .hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .hero-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .hero-buttons .primary-btn,
+  .hero-buttons .secondary-btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-weight: 500;
+    transition: opacity var(--transition-speed), background var(--transition-speed);
+  }
+  
+  .hero-buttons .primary-btn {
+    background-color: var(--secondary-color);
+  }
+  
+  .hero-buttons .secondary-btn {
+    background-color: #333; /* GitHub cor de fundo */
+  }
+  
+  .hero-buttons .primary-btn:hover,
+  .hero-buttons .secondary-btn:hover {
+    opacity: 0.9;
+  }
+  
+  .hero-image {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .hero-image img {
+    width: 400px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* =========================================
+     Case Studies / Projetos
+  ========================================= */
+  .case-studies {
+    padding: 3rem 0;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .section-header .section-tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-header p {
+    color: var(--text-secondary);
+  }
+  
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .case-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .case-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .case-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .case-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+  }
+  
+  .case-content p {
+    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .results {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .case-link {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+  }
+  
+  .case-link:hover {
+    color: #1b6da8;
+  }
+  
+  /* =========================================
+     CTA Section
+  ========================================= */
+  .contact-cta {
+    padding: 3rem 0;
+    background-color: #f3f6f9;
+  }
+  
+  .contact-cta .cta-content {
+    text-align: center;
+  }
+  
+  .contact-cta h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+  }
+  
+  .contact-cta p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-cta .primary-btn {
+    background-color: #0077B5; /* azul LinkedIn */
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    margin-right: 1rem;
+    transition: opacity var(--transition-speed);
+  }
+  
+  .contact-cta .primary-btn:hover {
+    opacity: 0.9;
+  }
+  
+  .contact-cta .secondary-btn {
+    background-color: #333; /* GitHub cor de fundo */
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: opacity var(--transition-speed);
+  }
+  
+  .contact-cta .secondary-btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* =========================================
+     Footer (Rodapé)
+  ========================================= */
+  .main-footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    margin-top: 2rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-section ul li a {
+    color: var(--white);
+    transition: color var(--transition-speed);
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: color var(--transition-speed);
+  }
+  
+  .social-links a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .footer-links a {
+    color: var(--white);
+    opacity: 0.8;
+    transition: opacity var(--transition-speed);
+  }
+  
+  .footer-links a:hover {
+    opacity: 1;
+  }
+  
+  /* =========================================
+     Responsividade
+  ========================================= */
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .main-nav {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .hero-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .hero-image img {
+      margin: 2rem auto 0 auto;
+    }
+  
+    .cases-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-text h2 {
+      font-size: 1.6rem;
+    }
+  
+    .section-header h2 {
+      font-size: 1.6rem;
+    }
+  
+    .contact-cta h2 {
+      font-size: 1.6rem;
+    }
+  }
+  

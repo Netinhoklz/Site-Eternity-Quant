@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #3498DB;
+    --accent-color: #E74C3C;
+    --success-color: #2ECC71;
+    --background-light: #F8FAFC;
+    --text-primary: #2C3E50;
+    --text-secondary: #6C757D;
+    --white: #FFFFFF;
+    --gradient-primary: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background: var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    background: var(--secondary-color);
+}
+
+/* Consultation Form Section */
+.consultation-section {
+    padding: 8rem 0 4rem;
+    background: var(--gradient-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.form-container {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-tag {
+    display: inline-block;
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section-header p {
+    color: var(--text-secondary);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all var(--transition-speed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form-container {
+        margin: 0 1rem;
+        padding: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Animações */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
