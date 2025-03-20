@@ -46,6 +46,6 @@ Visite-nos e descubra como a Eternity Quant está moldando o futuro dos dados �
 
 Eternity Quant: Onde a análise encontra a ação, e a tecnologia encontra o propósito.
 
-🔗 [[Link site](https://site-eternity-quant.onrender.com/)]
+🔗 [[Link do site](https://site-eternity-quant.onrender.com/)]
 
 Desenvolvido com Flask, impulsionado por Python, inspirado por resultados.
